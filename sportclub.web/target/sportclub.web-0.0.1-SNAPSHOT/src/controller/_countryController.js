@@ -162,10 +162,13 @@ define(['model/countryModel'], function(countryModel) {
             var self = this;
             this.$el.slideUp("fast", function() {
                 self.$el.html(self.editTemplate({country: self.currentCountryModel, componentId: self.componentId , showEdit : self.showEdit , showDelete : self.showDelete
- 
+                        
 				}));
                 self.$el.slideDown("fast");
             });
+        },
+         language: function(){
+            alert('Usted está viendo la versión en ESPAÑOL de esta página');
         }
     });
     return App.Controller._CountryController;
