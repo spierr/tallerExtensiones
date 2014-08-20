@@ -32,6 +32,23 @@ define(['model/_addressModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            if(!attrs.street) {
+                validationMessage = "The street can't be empty.";
+            } else if(attrs.street.isNan()) {
+                validationMessage = "The street must be a number.";
+            } else if(attrs.street > 999) {
+                validationMessage = "The street must be under 4 digits.";
+            }
+            if(!attrs.aveneu) {
+                validationMessage = "The aveneu can't be empty.";
+            } else if(attrs.aveneu.isNan()) {
+                validationMessage = "The aveneu must be a number.";
+            } else if(attrs.aveneu > 999) {
+                validationMessage = "The avenue must be under 4 digits.";
+            }
+            if(!attrs.cityId) {
+                validationMessage = "The cityId can't be empty.";
+            }
             if(validationMessage.length>0){
                return validationMessage;
             }
