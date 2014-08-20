@@ -5,6 +5,7 @@
     <thead>
     <tr>
 		 <th>Age Of Expirience</th>
+                 <th>Categoria</th>
 		 <th>Name</th>
 		 <th>First Name</th>
 		 <th>Last Name</th>
@@ -18,6 +19,7 @@
     <% _.each(referees, function(referee) { %>
     <tr>
 		<td><%= htmlEncode(referee.getDisplay('ageOfExpirience')) %></td>
+                <td><a onclick="Backbone.trigger('<%= componentId %>-referee-categoria',{years:<%= htmlEncode(referee.getDisplay('ageOfExpirience')) %>}); return false;" >Ver categoria</a></td>
 		<td><%= htmlEncode(referee.getDisplay('name')) %></td>
 		<td><%= htmlEncode(referee.getDisplay('firstName')) %></td>
 		<td><%= htmlEncode(referee.getDisplay('lastName')) %></td>

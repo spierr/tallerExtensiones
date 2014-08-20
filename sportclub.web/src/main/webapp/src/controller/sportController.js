@@ -44,6 +44,10 @@ define(['controller/_sportController', 'delegate/sportDelegate'], function() {
                 self.$el.slideDown("fast");
             });
         },
+        average: function(params){
+            var avg = ((parseInt(params.maxAge) + parseInt(params.minAge)) / 2);
+            alert('El promedio de edad del deporte es: ' + avg);
+        },
         sportPromedio: function(params) {
             //Elementos para invocar el servicio getSports
             if (params) {

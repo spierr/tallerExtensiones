@@ -35,6 +35,9 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         controller : App.Controller.ChampionShipController,
         postInit: function(){
             var self = this;
+            Backbone.on(self.componentId + '-championShip-cost', function(params) {
+                self.componentController.cost(params);
+                 });
             this.toolbarModel.set('createName', 'Crear');
             this.toolbarModel.set('refreshName', 'Refrescar');
             this.toolbarModel.set('showPrint', false);
@@ -46,6 +49,7 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
             this.addButton({name: "Idioma", icon: "glyphicon-question-sign", }, function() {
                  self.componentController.language();
             });
+            
         }
     
     });

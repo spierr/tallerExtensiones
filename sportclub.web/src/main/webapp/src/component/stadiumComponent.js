@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'stadium',
         model: App.Model.StadiumModel,
         listModel: App.Model.StadiumList,
-        controller : App.Controller.StadiumController
+        controller : App.Controller.StadiumController,
+        postInit: function() {
+            var self = this;
+            
+             Backbone.on(self.componentId + '-stadium-categoria', function(params) {
+                self.componentController.categoria(params);
+                 });
+        }
     });
     return App.Component.StadiumComponent;
 });

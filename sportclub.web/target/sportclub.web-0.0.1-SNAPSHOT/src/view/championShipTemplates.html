@@ -7,6 +7,7 @@
 		 <th>Nombre</th>
 		 <th>Fecha de inicio</th>
 		 <th>Fecha de clausura</th>
+                 <th>Costo de campeonato</th>
     <th>Acciones</th>
     </tr>
     </thead>
@@ -16,7 +17,9 @@
 		<td><%= htmlEncode(championShip.getDisplay('name')) %></td>
 		<td><%= htmlEncode(championShip.getDisplay('startDate')) %></td>
 		<td><%= htmlEncode(championShip.getDisplay('endDate')) %></td>
-    <td>
+                <td><a onclick="Backbone.trigger('<%= componentId %>-championShip-cost',{startDate:<%= htmlEncode(championShip.getDisplay('startDate')) %>,endDate:<%= htmlEncode(championShip.getDisplay('endDate')) %>}); return false;" >Ver costo</a></td>
+  
+    <td>        
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-championShip-edit',{id:<%= championShip.id %>}); return false" >Editar</a> |
 	<% } %> 
